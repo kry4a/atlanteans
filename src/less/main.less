@@ -1,0 +1,281 @@
+/* imports */
+@import "./imports/_mixins.less";
+@import "./imports/_variables.less";
+
+/* base styles */
+* {
+  box-sizing: border-box;
+}
+
+
+
+/* typography */
+body {
+    font-family: 'Proxima Nova', Georgia, sans-serif;
+}
+
+.small {
+  font-size: 14px;
+}
+
+/* containers */
+
+.container {
+  &--fluid {
+    padding: 0 35px;
+  }
+}
+
+/* buttons */
+.btn {
+  display: block;
+  width: auto;
+  border-radius: 14px;
+  text-transform: uppercase;
+
+  border: none;
+  padding: 15px 30px;
+  &--blue {
+    color: #ffffff;
+    background-color: #12affe;
+  }
+}
+
+/* navbar */
+.navbar {
+  background-color: #000000;
+  color: #ffffff;
+  
+  height: 70px;
+  z-index: 999;
+  
+  &__logo {
+    width: 100px;
+    height: 70px;
+    background-image: url(../img/logo.png);
+    display: inline-block;
+    vertical-align: middle;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    margin-right: 35px;
+  }
+
+  &--top {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+
+  &__phones {
+    float: right;
+    list-style: none;
+  }
+}
+
+/* menu */
+
+.menu {
+  margin: 0;
+  padding: 0;
+
+  display: inline-block;
+  vertical-align: middle;
+
+  &__item {
+    display: inline-block;
+    margin-right: 15px;
+  }
+
+  &__link {
+    color:#ffffff;
+    text-decoration: none;
+
+    font-size: 14px;
+    line-height: 70px;
+
+    cursor:pointer;
+
+    &:hover {
+      color:#ffffff;      
+      text-decoration: underline;
+    }
+  }
+}
+
+
+/* header */
+.header { 
+  
+  color: #ffffff;
+  padding: 45px 0;
+  
+  margin-top: 70px;
+
+  &__logo {
+    position: absolute;
+    left: 0;
+    bottom: -48px;
+
+    
+  }
+}
+
+/* sections */
+.section {
+  padding: 45px 0;
+  &--pattern {
+    background-size: cover;
+    background-position: center;
+  }
+
+  &__title {
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+    &--white {
+      color: #ffffff;
+    }
+  }
+}
+
+/* patterns */
+.pattern {
+  &--redorange {
+    background-image: url('../img/pattern-redorange.png');
+  }
+
+  &--blue-small {
+   background-image: url('../img/pattern-blue-small.png'); 
+  }
+
+  &--red {
+   background-image: url('../img/pattern-red.png'); 
+  }
+}
+
+
+
+/* images */
+
+.img {
+  &--responsive {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}
+
+
+/* promoblock */
+.promo {
+
+  &__hashtag {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 39px;
+  }
+  &__title {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 33px;
+  }
+
+  &__subtitle {
+    font-weight: 700;
+    line-height: 22px;
+    font-size: 16px;
+  }
+}
+
+
+
+/* rules */
+
+.rule {
+  text-align: center;
+  &__image {
+    overflow: hidden;
+    width: 100px;
+    display: inline-block;
+
+    margin-bottom: 10px;
+  }
+  &__title {
+    font-size: @font-size;
+    color: @blue-header;
+    margin-bottom: 5px;
+    text-align: center;
+  }
+  &__text {
+    font-size: @font-size;
+    line-height: 1.5;
+    text-align: center;
+  }
+}
+
+
+
+/* demands */
+
+
+.demand {
+  text-align: center;
+  &__image {
+    width:  100px;
+  }
+  &__title {
+    font-size: @font-size;
+    color: @blue-header;
+    margin-bottom: 5px;
+    text-align: center;
+  }
+  &__text {
+    font-size: @font-size;
+    line-height: 1.5;
+    text-align: center;
+  }
+}
+
+
+/* forms */ 
+.form {
+  &__inner {
+    background-image: url('../img/form.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 30px 45px;
+  }
+  &__title {
+    color: #000000;
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: bold;
+  }
+
+  &__fields {
+
+  }
+  
+  &__field {
+    display: block;
+    width: 100%;
+
+    padding: 5px 20px;
+    
+    margin-bottom: 15px;
+    
+    height: 35px;
+    border-radius: 14px;
+    
+    border: 2px solid #000000;
+    font-size: 16px;
+  }
+
+  &__button {
+    width: 100%;
+  }
+}
+
+
