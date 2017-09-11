@@ -208,7 +208,7 @@ span {
 /* promoblock */
 .promo {
   padding-top: 30px;
-
+  color: #ffffff;
   &__hashtag {
     font-family: 'Proxima Nova Cn Rg';
     font-size: 32px;
@@ -222,6 +222,11 @@ span {
     font-size: 36px;
     font-weight: 700;
     line-height: 33px;
+
+    &--big {
+      margin-top: 45px;
+      font-size: 36px;
+    }
   }
 
   &__subtitle {
@@ -229,7 +234,11 @@ span {
     line-height: 22px;
     font-size: 16px;
     margin-bottom: 0;
-
+    
+    &--big {
+      font-size: 24px;
+      font-weight: bold;
+    }
     &:last-child {
       margin-bottom: 20px;
     }
@@ -353,6 +362,14 @@ span {
     background-repeat: no-repeat;
     background-position: center;
     padding: 35px 85px;
+  }
+  
+  &__inner--bordered-2 {
+    background-image: url('../img/form-bg-2.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding:35px 85px 35px 70px;
   }
 
   &__title {
