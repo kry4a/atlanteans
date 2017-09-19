@@ -27,19 +27,19 @@
       <a class="navbar__logo" href="/"></a>
       <ul class="menu">
         <li class="menu__item">
-          <a href="#about" class="menu__link">Об игре</a>
+          <a href="#about" data-target="about" class="menu__link">Об игре</a>
         </li>
         <li class="menu__item">
-          <a href="#rules" class="menu__link">Правила</a>
+          <a href="#rules" data-target="rules" class="menu__link">Правила</a>
         </li>
         <li class="menu__item">
-          <a href="#tasks" class="menu__link">Программа</a>
+          <a href="#tasks" data-target="tasks" class="menu__link">Программа</a>
         </li>
         <li class="menu__item">
-          <a href="#price" class="menu__link">Стоимость участия</a>
+          <a href="#price" data-target="price" class="menu__link">Стоимость участия</a>
         </li>
         <li class="menu__item">
-          <a href="#reviews" class="menu__link">Отзывы</a>
+          <a href="#reviews" data-target="reviews" class="menu__link">Отзывы</a>
         </li>
       </ul>
       <div class="menu__toggler">
@@ -47,12 +47,19 @@
         <span></span>
         <span></span>
       </div>
-      <div class="navbar__phones">
-        <a href="" class="btn btn--red" id="callback_btn">Обратный звонок</a>
+      <div class="pull--right">
+        <div class="navbar__links">
+          <a href="#" class="link link--vk"></a>
+          <a href="#" class="link link--ig"></a>
+        </div>
+        <div class="navbar__phones">
+          <a href="" class="btn btn--red" id="callback_btn">Обратный звонок</a>
+        </div>  
       </div>
+      
     </div>
   </nav>
-  <header class="header section--pattern pattern--redorange">
+  <header class="header section--pattern pattern--redorange" id="about">
     <div class="container">
       <div class="row">
         <img class="header__logo" src="./img/orlan-1.png">
@@ -77,7 +84,7 @@
     </div>
   </header>
   <main class="main">
-    <section class="section section--white">
+    <section class="section section--white" id="rules">
       <div class="container">
         <h1 class="section__title">Правила игры просты</h1>
         <div class="rules row">
@@ -211,7 +218,7 @@
         <p style="text-align: center;"><span class="bold">Ты</span>, если хочешь выйти на новый уровень дохода!</p>
       </div>
     </section>
-    <section class="section section--pattern pattern--blue-small">
+    <section class="section section--pattern pattern--blue-small" id="tasks">
       <div class="container">
         <h1 class="section__title section__title--white">СКАЧАЙ ПОДРОБНУЮ ПРОГРАММУ ИГРЫ</h1>
         
@@ -252,25 +259,27 @@
             </ul>
             </div>
           <div class="col-md-4">
-            <img style="display: block; width: 100%; height: auto; bottom: -65px; position: absolute;" src="./img/orlan-2.png">
+            <div class="orlan--2">
+              <img class="img--responsive" src="./img/orlan-2.png">  
+            </div>
+            
           </div>
         </div>
         
 
       </div>
     </section>
-    <div class="section section--pattern pattern--blue-big">
+    <div class="section section--pattern pattern--blue-big" id="price">
       <div class="container">
         <div class="section__title section__title--white">Стоимость участия в игре</div>
         <div class="plans">
-          <div class="plans__item plan">
+          <div class="plans__item plan"> 
             <div class="plan__inner">
-              <p class="plan__title">Тариф Сам по себе</p>
+              <p class="plan__title">Тариф «Сам по себе»</p>
               <p class="plan__price">2900 руб.</p>
+
               <div class="plan_desc">
-                <p class="plan__text">Доступ ко всем вебинарам</p>
-                <p class="plan__text">Доступ ко всем заданиям</p>
-                <p class="plan__text">Работа с куратором</p>
+                <p class="plan__text">Ты получишь доступ ко всем заданиям и вебинарам и будешь под постоянной поддержкой опытного куратора</p>
               </div>
               <p class="plan_adds">Без иммунитета</p>
               <a href="#" class="btn btn--blue plan__button">Играть</a>
@@ -278,12 +287,10 @@
           </div>
           <div class="plans__item plan">
             <div class="plan__inner">
-              <p class="plan__title">Тариф Бессмертный</p>
+              <p class="plan__title">Тариф «Бессмертный»</p>
               <p class="plan__price">3900 руб.</p>
               <div class="plan_desc">
-                <p class="plan__text">Доступ ко всем вебинарам</p>
-                <p class="plan__text">Доступ ко всем заданиям</p>
-                <p class="plan__text">Работа с куратором</p>
+                <p class="plan__text">Доступ ко всем заданиям и вебинарам, поддержка куратора + иммунитет на 1 вылет. Иммунитетом можно воспользоваться 1 раз на ЛЮБОЙ неделе игры.</p>
               </div>
               <p class="plan_adds">Иммунитет на 1 вылет</p>
               <a href="#" class="btn btn--blue plan__button">Играть</a>
@@ -291,12 +298,10 @@
           </div>
           <div class="plans__item plan">
             <div class="plan__inner">
-              <p class="plan__title">Тариф Орлан</p>
+              <p class="plan__title">Тариф «Орлан»</p>
               <p class="plan__price">7500 руб.</p>
               <div class="plan_desc">
-                <p class="plan__text">Доступ ко всем вебинарам</p>
-                <p class="plan__text">Доступ ко всем заданиям</p>
-                <p class="plan__text">Группа Евгения Орлана</p>
+                <p class="plan__text">Твоим куратором будет сам Евгений Орлан, а это значит, что ты получишь еще большую дозу навыков от лучшего бизнес-тренера. + иммунитет на 1 вылет</p>
               </div>
               <p class="plan_adds">Иммунитет на 1 вылет</p>
               <a href="#" class="btn btn--blue plan__button">Играть</a>
@@ -305,7 +310,7 @@
         </div>
       </div>
     </div>
-    <section class="section">
+    <section class="section" id="reviews">
       <div class="container">
         <h1 class="section__title">Отзывы участников прошлой игры</h1>
         <div class="reviews">
@@ -506,13 +511,13 @@
         <h1 class="section__title section__title--white">Дополнительные возможности</h1>
         <div class="additions">
           <div class="additions__item addition">
-            <p class="addition__title">Стать партнером</p>
-            <p class="addition__text">Как стать партнером? Что включает в себя партнерский пакет? Напишите нам!</p>
+            <p class="addition__title">Стать<br>партнером</p>
+            <p class="addition__text">Как стать партнером?<br>Что включает в себя партнерский пакет?<br>Напишите нам!</p>
             <button class="btn btn--blue addition__button">Написать</button>
           </div>
           <div class="additions__item addition">
-            <p class="addition__title">Играть своей командой</p>
-            <p class="addition__text">Прокачайте отдел продаж вашей компании. Оставьте заявку на пакет от 5 человек</p>
+            <p class="addition__title">Играть своей<br>командой</p>
+            <p class="addition__text">Прокачайте отдел<br>продаж вашей компании.<br>Оставьте заявку на пакет от 5 человек</p>
             <button class="btn btn--blue addition__button">Написать</button>
           </div>
         </div>
@@ -529,5 +534,26 @@
   <script type="text/javascript" src="https://yastatic.net/jquery/3.1.1/jquery.min.js"></script>
   <script type="text/javascript" src="./js/libs.min.js"></script>
   <script type="text/javascript" src="./js/bundle.js"></script>
+  <!-- VK Pixel Code -->
+  <script type=“text/javascript”>(window.Image ? (new Image()) : document.createElement(‘img’)).src = ‘https://vk.com/rtrg?p=VK-RTRG-162280-2ZNtu';</script>
+  <!-- -->
+  
+  <!-- Facebook Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version=‘2.0’;
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window,document,‘script’,
+    ‘https://connect.facebook.net/en_US/fbevents.js');
+     fbq(‘init’, ‘1825027427771441’); 
+    fbq(‘track’, ‘PageView’);
+  </script>
+  <noscript>
+  <img height="1" width="1" src="https://www.facebook.com/tr?id=1825027427771441&ev=PageView&noscript=1"/>
+  </noscript>
+  <!-- -->
 </body>
 </html>

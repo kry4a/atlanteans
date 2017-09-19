@@ -19,4 +19,13 @@ $(function(){
     $('.popup').hide();
     return false;
   });
+  
+  $(".menu__link").click(function(e) {
+    var target = $(this).data('target');
+    $('html, body').animate({
+        scrollTop: $('#'+target).offset().top - 50
+    }, 750);
+    
+    return false;
+  });
 });

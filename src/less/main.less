@@ -35,13 +35,40 @@ span {
   font-size: 14px;
 }
 
+.pull {
+  &--right {
+    float: right;
+  }
+}
 .link {
   text-decoration: none;
 
   &--white {
     color:#ffffff;
   }
+  
+  &--vk {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-image: url('../img/vk-xxl.png'); 
+    background-size: contain;
+    margin-right: 15px;
 
+    &:hover {
+      background-color: red;
+      border-radius: 5px;
+    }
+  }
+
+  &--ig {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-image: url('../img/instagram-xxl.png'); 
+    background-size: contain;
+    margin-right: 15px;
+  }
   &:hover {
     text-decoration: underline;
   }
@@ -133,8 +160,15 @@ span {
     width: 100%;
   }
 
+  &__links {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 20px 0;
+    font-size: 0;
+  }
   &__phones {
-    float: right;
+    display: inline-block;
+    vertical-align: middle;
     list-style: none;
     padding: 15px 0;
 
@@ -234,15 +268,15 @@ span {
 .header { 
   
   color: #ffffff;
-  padding: 45px 0;
+  padding: 85px 0;
   
   margin-top: 70px;
 
   &__logo {
-    width: 25%;
+    width: 28%;
     position: absolute;
-    left: -75px;
-    bottom: -45px;
+    left: -12%;
+    bottom: -85px;
 
     @media @mobiles {
       display: none;
@@ -369,7 +403,7 @@ span {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  justify-content: space-around;
+  justify-content: center;
   align-items: stretch;
   align-content: stretch;
 
@@ -393,7 +427,16 @@ span {
   max-width: 240px;
 
   padding: 30px 20px;
+  
+  margin-right: 70px;
 
+  &:last-child {
+    margin-right: 0;
+  }
+
+  @media @mobiles {
+    margin-right: 0;
+  }
   &--1 {
     background-image: url('../img/rule-bg-1.png');
   } 
@@ -725,7 +768,8 @@ span {
   }
 
   &__inner {
-    padding:50px 25px;
+    padding:50px 20px;
+    max-width: 265px;
   }
 
   &__title {
@@ -921,6 +965,7 @@ span {
     line-height: 22px;
     margin-bottom: 20px;
     text-align: center;
+    text-transform: uppercase;
   } 
 
   &__text {
@@ -1172,7 +1217,11 @@ span {
   }
 }
 
-
+.orlan {
+  &--2 {
+    display: block; width: 100%; height: auto; bottom: -65px; position: absolute;
+  }
+}
 
 /* unslider */
 .unslider-arrow {
