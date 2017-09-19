@@ -13,19 +13,19 @@
       <a class="navbar__logo" href="/"></a>
       <ul class="menu">
         <li class="menu__item">
-          <a href="#about" class="menu__link">Об игре</a>
+          <a href="#about" data-target="about" class="menu__link">Об игре</a>
         </li>
         <li class="menu__item">
-          <a href="#rules" class="menu__link">Правила</a>
+          <a href="#rules" data-target="rules" class="menu__link">Правила</a>
         </li>
         <li class="menu__item">
-          <a href="#tasks" class="menu__link">Программа</a>
+          <a href="#tasks" data-target="tasks" class="menu__link">Программа</a>
         </li>
         <li class="menu__item">
-          <a href="#price" class="menu__link">Стоимость участия</a>
+          <a href="#price" data-target="price" class="menu__link">Стоимость участия</a>
         </li>
         <li class="menu__item">
-          <a href="#reviews" class="menu__link">Отзывы</a>
+          <a href="#reviews" data-target="reviews" class="menu__link">Отзывы</a>
         </li>
       </ul>
       <div class="menu__toggler">
@@ -33,10 +33,16 @@
         <span></span>
         <span></span>
       </div>
-      <ul class="navbar__phones">
-        <li>8 (812) 408 38 24</li>
-        <li>8 (981) 762 25 99</li>
-      </ul>
+      <div class="pull--right">
+        <div class="navbar__links">
+          <a href="#" class="link link--vk"></a>
+          <a href="#" class="link link--ig"></a>
+        </div>
+        <div class="navbar__phones">
+          <a href="" class="btn btn--red" id="callback_btn">Обратный звонок</a>
+        </div>  
+      </div>
+      
     </div>
   </nav>
   
@@ -52,7 +58,7 @@
         <div class="form__block">
           <div class="form__block-inner form__block-inner--2"></div>
           <h1 class="form__title"><span>ОНЛАЙН-МАСТЕР КЛАСС</span> ЕВГЕНИЯ ОРЛАНА<br>#ПРОДАВЕЦИДЕЙ</h1>
-          <p class="form__text"><span class="bold">Участие бесплатно!</span> Этот мастер-класс является частью программы подготовки к третьему потоку онлайн-игры по продажам <a href="#">«Продавец Идей»</a></p>
+          <p class="form__text"><span class="bold">Участие бесплатно!</span> Этот мастер-класс является частью программы подготовки к третьему потоку онлайн-игры по продажам <a href="#">«Продавец Идей»</a></p>
         </div>
         <div class="form__block">
           <div class="form__block-inner form__block-inner--3"></div>
@@ -69,7 +75,7 @@
   <footer class="footer">
     <div class="contaner container--fluid">
       <div class="pull--right">
-        <div class="footer__copyright">game@atlanty.biz   |   2017 год</div>
+        <div class="footer__copyright">#ПродавецИдей  |   © 2017 ИП "…."    |   <a class="link link--white"href="#">Политика конфиденциальности персональных данных</a>   |   Тел: 8 (812)- 408-38-2424</div> 
       </div>
     </div>
   </footer>

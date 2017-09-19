@@ -28,4 +28,9 @@ $(function(){
     
     return false;
   });
+  
+  $(".menu__toggler").click(function(e) {
+    $('.menu').toggleClass('active');
+  });
+
 });
