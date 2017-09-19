@@ -4,5 +4,7 @@ $(function(){
   });
 
 
-  $('.reviews').unslider();
+  $('.reviews').unslider({
+    nav:false
+  });
 });
