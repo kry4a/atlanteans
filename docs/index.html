@@ -8,6 +8,20 @@
   <link rel="stylesheet" type="text/css" href="./css/bundle.css">
 </head>
 <body>
+  <div class="popup__bg"></div>
+  <div class="popup popup--callback">
+    <a class="popup__close" href="#">x</a>
+    <p class="form__title">Принять участие</p>
+    <form id="callback__form" action="#">
+      <div class="form__fields">
+        <input class="form__field" placeholder="Ваше имя" type="text">
+        <input class="form__field" placeholder="Ваш телефон" type="text">
+      </div>
+      <div class="popup__buttons">
+        <a class="btn btn--red" href="#" value="">Перезвоните мне</a>
+      </div>
+    </form>
+  </div>
   <nav class="navbar navbar--top">
     <div class="contaner container--fluid">
       <a class="navbar__logo" href="/"></a>
@@ -34,7 +48,7 @@
         <span></span>
       </div>
       <div class="navbar__phones">
-        <a href="" class="btn btn--red">Обратный звонок</a>
+        <a href="" class="btn btn--red" id="callback_btn">Обратный звонок</a>
       </div>
     </div>
   </nav>

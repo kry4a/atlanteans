@@ -1209,12 +1209,19 @@ span {
   margin-top: 0px;
   margin-top: 0px;
   margin-top: 150px;
-  padding: 15px;
-  background-color: #3F4354;
-  color: #ffffff;
+  padding: 30px;
+  background-color: #ffffff;
+  color: #000000;
+  text-align: center;
+  border: 2px solid #000000;
+  border-radius: 15px;
   box-shadow: 0 4px 40px rgba(0, 0, 0, 0.8);
   z-index: 2201;
   display: none;
+
+  &--callback {
+    width: 400px;
+  }
   &__bg {
     top: 0;
     position: fixed;
@@ -1225,4 +1232,18 @@ span {
     display: none;
   }
 
+  &__close {
+    display: block;
+    background-color: #fff;
+    position: absolute;
+    right: -15px;
+    top: -15px;
+    border-radius: 15px;
+    width: 30px;
+    height: 30px;
+    border: 2px solid #000000;
+    line-height: 25px;
+    text-decoration: none;
+    padding: 0;
+  }
 }
