@@ -124,6 +124,7 @@ span {
   &__phones {
     float: right;
     list-style: none;
+    padding: 15px 0;
 
     @media @mobiles {
       display: none;
@@ -163,7 +164,7 @@ span {
 
     cursor:pointer;
     
-    text-decoration: uppercase;
+    text-transform: uppercase;
 
     &:hover {
       color:#ffffff;      
@@ -262,6 +263,12 @@ span {
       color: #ffffff;
     }
   }
+
+  &__subtitle {
+    text-align: center;
+    font-size: 21px;
+    color: #Ffffff;
+  }
 }
 
 /* patterns */
@@ -306,6 +313,8 @@ span {
   color: #ffffff;
   &__hashtag {
     font-family: 'Proxima Nova Rg';
+    color: #000000;
+    text-transform: uppercase;
     font-size: 32px;
     font-weight: 700;
     line-height: 39px;
@@ -372,27 +381,27 @@ span {
 
   padding: 30px 20px;
 
-  &:nth-child(1) {
+  &--1 {
     background-image: url('../img/rule-bg-1.png');
   } 
 
-  &:nth-child(2) {
+  &--2 {
     background-image: url('../img/rule-bg-2.png');
   }
 
-  &:nth-child(3) {
+  &--3 {
     background-image: url('../img/rule-bg-3.png');
   }
   
-  &:nth-child(4) {
+  &--4 {
     background-image: url('../img/rule-bg-4.png');
   }
   
-  &:nth-child(5) {
+  &--5 {
     background-image: url('../img/rule-bg-5.png');
   }
 
-  &:nth-child(6) {
+  &--6 {
     background-image: url('../img/rule-bg-6.png');
   }
 
@@ -631,7 +640,7 @@ span {
     &:before {
       content: "";
       width: 18px;
-      height: 14px;
+      height: 18px;
       background-image: url('../img/check.png');
       background-repeat: no-repeat;
       background-size: cover;
@@ -825,17 +834,29 @@ span {
 }
 .reviews {
   text-align: center;
+
+  max-width: 700px;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.reviews__list {
+  display: block;
+  list-style: none;
+  text-align: center;
+
 }
 
 .review {
   display: inline-block;
   background-repeat: no-repeat;
   background-position: center;
-  background-size: cover; 
+  background-size: contain; 
   background-image: url('../img/review-bg.png');
 
-  padding: 71px;
-  max-width: 770px;
+  padding: 70px 70px 0px 70px !important;
+  
   
   &__title {
 
@@ -880,7 +901,6 @@ span {
 
 /* FAQ */
 .faq {
-
   @media @mobiles {
     padding: 0 30px;
   }
@@ -904,7 +924,47 @@ span {
     margin-bottom: 15px;
     padding-bottom: 15px;
     border-bottom: 1px solid #cccccc;
-  
+    padding-right: 15px;
+    position: relative;
+    
+    cursor: pointer;
+
+    &:after {
+      content: "";
+
+      width: 8px;
+      height: 8px;
+      
+      border-right: 1px solid #000000;
+      border-bottom: 1px solid #000000;
+      transform: rotateZ(45deg);
+      position: absolute;
+      right: 0;
+      top:3px;
+    }
+
+    
+
+    &--opened {
+      .faq__answer {
+       max-height: 700px;
+       opacity: 1;
+      }
+
+      &:after {
+        transform: rotateZ(-135deg);
+      }
+    }
+  }
+
+  &__answer {
+    transition: all 0.3s ease;
+    max-height: 0;
+    opacity: 0;
+    font-size: 14px;
+    p {
+      margin-bottom: 5px;
+    }
   }
 }
 
