@@ -25,24 +25,6 @@
     </form>
   </div>
 
-  <div class="popup popup--plan">
-    <a class="popup__close" href="#">x</a>
-    <p class="form__title">Принять участие</p>
-    <form id="enroll-form-popup" action="#">
-      <div class="form__fields">
-        <input type="hidden" name="plan" value="Не определился">
-        <input type="hidden" name="method" value="enroll">
-        <input class="form__field im--text" name="name" placeholder="Ваше имя" type="text" required>
-        <input class="form__field im--phone" name="phone" placeholder="Ваш телефон" type="text" required>
-        <input class="form__field im--email" name="email" placeholder="Ваш E-mail" type="text" required>
-      </div>
-      <div class="popup__buttons">
-        <a class="btn btn--red" href="#" value="">Записаться</a>
-      </div>
-    </form>
-  </div>
-
-
   <nav class="navbar navbar--top">
     <div class="contaner container--fluid">
       <a class="navbar__logo" href="/"></a>
@@ -293,7 +275,20 @@
       </div>
     </section>
     <div class="section section--pattern pattern--blue-big" id="price">
-      <div class="container">
+      <form id="payment-form" method="POST" action="https://money.yandex.ru/quickpay/confirm.xml">
+        <input type="hidden" name="receiver" value="410014928010281">
+        <input type="hidden" name="formcomment" value="">
+        <input type="hidden" name="short-dest" value="">
+        <input type="hidden" name="quickpay-form" value="donate">
+        <input type="hidden" name="targets" value="Участие в игре">
+        <input type="hidden" name="sum" value="0" data-type="number">
+        <input type="hidden" name="need-fio" value="true">
+        <input type="hidden" name="need-email" value="true">
+        <input type="hidden" name="need-phone" value="true">
+        <input type="hidden" name="need-address" value="false">
+        <input type="hidden" name="paymentType" value="AC">
+      </form>
+        <div class="container">
         <div class="section__title section__title--white">Стоимость участия в игре</div>
         <div class="plans">
           <div class="plans__item plan"> 
@@ -304,7 +299,7 @@
                 <p class="plan__text">Ты получишь доступ ко всем заданиям и вебинарам и будешь под постоянной поддержкой опытного куратора</p>
               </div>
               <p class="plan_adds">Без иммунитета</p>
-              <a data-plan="Сам по себе" href="#" class="btn btn--blue plan__button">Играть</a>
+              <a data-plan="Сам по себе" data-price="2900.00" href="#" class="btn btn--blue plan__button">Играть</a>
             </div>
           </div>
           <div class="plans__item plan">
@@ -315,7 +310,7 @@
                 <p class="plan__text">Доступ ко всем заданиям и вебинарам, поддержка куратора + иммунитет на 1 вылет. Иммунитетом можно воспользоваться 1 раз на ЛЮБОЙ неделе игры.</p>
               </div>
               <p class="plan_adds">Иммунитет на 1 вылет</p>
-              <a data-plan="Бессмертный" href="#" class="btn btn--blue plan__button">Играть</a>
+              <a data-plan="Бессмертный" data-price="3900.00" href="#" class="btn btn--blue plan__button">Играть</a>
             </div>
           </div>
           <div class="plans__item plan">
@@ -326,7 +321,7 @@
                 <p class="plan__text">Твоим куратором будет сам Евгений Орлан, а это значит, что ты получишь еще большую дозу навыков от лучшего бизнес-тренера. + иммунитет на 1 вылет</p>
               </div>
               <p class="plan_adds">Иммунитет на 1 вылет</p>
-              <a data-plab="Орлан" href="#" class="btn btn--blue plan__button">Играть</a>
+              <a data-plan="Орлан" data-price="7500.00" href="#" class="btn btn--blue plan__button">Играть</a>
             </div>
           </div>
         </div>
@@ -570,12 +565,12 @@
           <div class="additions__item addition">
             <p class="addition__title">Стать<br>партнером</p>
             <p class="addition__text">Как стать партнером?<br>Что включает в себя партнерский пакет?<br>Напишите нам!</p>
-            <button class="btn btn--blue addition__button">Написать</button>
+            <a href="mailto:game@atlanty.biz" class="btn btn--blue addition__button">Написать</a>
           </div>
           <div class="additions__item addition">
             <p class="addition__title">Играть своей<br>командой</p>
             <p class="addition__text">Прокачайте отдел<br>продаж вашей компании.<br>Оставьте заявку на пакет от 5 человек</p>
-            <button class="btn btn--blue addition__button">Написать</button>
+            <a href="mailto:game@atlanty.biz" class="btn btn--blue addition__button">Написать</a>
           </div>
         </div>
       </div>
@@ -584,19 +579,20 @@
   <footer class="footer">
     <div class="contaner container--fluid">
       <div class="pull--right">
-        <div class="footer__copyright"><span>#ПродавецИдей</span><span>© 2017 ИП "…."</span><span><a class="link link--white"href="#">Политика конфиденциальности персональных данных</a></span><span>Тел: 8 (812)- 408-38-2424</span></div> 
+        <div class="footer__copyright"><span>#ПродавецИдей</span><span>© 2017 ИП Нидодиров Евгений Викторович</span><span><a class="link link--white" href="#">Политика конфиденциальности персональных данных</a></span><span>Тел: <a class="link link--white" href="tel:8(812)408382424">8 (812) 408-38-2424</a></span></div> 
       </div>
     </div>
   </footer>
+
   <script type="text/javascript" src="https://yastatic.net/jquery/3.1.1/jquery.min.js"></script>
   <script type="text/javascript" src="./js/libs.min.js"></script>
   <script type="text/javascript" src="./js/bundle.js"></script>
   
-  <!-- VK Pixel Code 
+   <!-- VK Pixel Code  -->
   <script type=“text/javascript”>(window.Image ? (new Image()) : document.createElement(‘img’)).src = ‘https://vk.com/rtrg?p=VK-RTRG-162280-2ZNtu';</script>
-  -->
+  <!-- -->
   
-  <!-- Facebook Pixel Code 
+  <!-- Facebook Pixel Code -->
   <script>
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -612,6 +608,6 @@
   <noscript>
   <img height="1" width="1" src="https://www.facebook.com/tr?id=1825027427771441&ev=PageView&noscript=1"/>
   </noscript>
-  -->
+  <!-- -->
 </body>
 </html>

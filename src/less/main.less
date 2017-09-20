@@ -832,6 +832,7 @@ span {
   }
 }
 .plan {
+  position: relative;
   text-align: center;
   
   
@@ -1441,5 +1442,47 @@ span {
     line-height: 25px;
     text-decoration: none;
     padding: 0;
+  }
+}
+
+.payment {
+  &__methods {
+    display: block;
+    list-style: none;
+    background-color: #ffffff;
+
+    padding: 0;
+    margin: auto;
+
+    text-align: center; 
+
+    border: 2px solid #000000;
+    padding: 15px;
+    width: 200px;
+    height: 125px;
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    
+    box-shadow:  0 0 10px rgba(0,0,0,0.5);
+  }
+  &__title {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color:#EB3836;
+  }
+  &__method {
+    display: block;
+    margin-bottom: 5px;
+    text-decoration: none;
+    color: #12AFFE;
+    font-size: 16px;
+
+    &:hover {
+      color:#EB3836;
+    }
   }
 }
