@@ -63,29 +63,32 @@ $(function(){
 
       if (form.find('input.error').length) return false;
       
-      switch(method) {
-        case 'enroll' :
-          enroll(form);
-        break;
-        case 'callback' :
-          callback(form);
-        break;
-      }
+      console.log('before submit');
+      e.preventDefault();
+      
+      console.log('validated');
+      $.ajax({
+        method: 'POST',
+        url: '/mailer.php',
+        data: $('#order').serialize(),
+        dataType: 'json',
+        success: function (json) {
+            console.log(json);
+            if (json['status']) {
+                console.log('success');
+               
+            } else {
+                console.log('error');
+            }
+        },
+        error: function(xhr, ajaxOptions, thrownError) {
+            alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+        }
+      });
+      
     }
 
     return false;
   }); 
-
-
-  
-  function enroll(form) {
-    console.log('enroll function calls');
-
-   
-  }
-  
-  function callback(form) {
-    console.log('callback function calls');
-  }
 
 });
