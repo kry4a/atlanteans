@@ -57,7 +57,7 @@ span {
 
     &:hover {
       background-color: red;
-      border-radius: 5px;
+      border-radius: 6px;
     }
   }
 
@@ -68,6 +68,11 @@ span {
     background-image: url('../img/instagram-xxl.png'); 
     background-size: contain;
     margin-right: 15px;
+
+    &:hover {
+      background-color: red;
+      border-radius: 6px;
+    }
   }
   &:hover {
     text-decoration: underline;
@@ -301,6 +306,11 @@ span {
 
   &__form {
     padding: 0;
+    max-width: 380px;
+    @media @mobiles {
+      margin: auto;
+      max-width: 280px;
+    }
   }
 }
 
@@ -338,6 +348,10 @@ span {
 .pattern {
   &--redorange {
     background-image: url('../img/pattern-redorange.png');
+
+    @media @mobiles {
+      background-position: 0 0;
+    }
   }
 
   &--blue-small {
@@ -374,6 +388,10 @@ span {
 .promo {
   padding-top: 30px;
   color: #ffffff;
+
+  @media @mobiles {
+    text-align: center;
+  }
   &__hashtag {
     font-family: 'Proxima Nova Rg';
     color: #000000;
@@ -382,6 +400,11 @@ span {
     font-weight: 700;
     line-height: 39px;
     margin-bottom: 15px;
+
+    @media @mobiles {
+      font-size: 28px;
+      color:#ffffff;
+    }
   }
 
   &__title {
@@ -389,7 +412,10 @@ span {
     font-size: 36px;
     font-weight: 700;
     line-height: 33px;
-
+    
+    @media @mobiles {
+      font-size: 26px;
+    }
     &--big {
       margin-top: 45px;
       font-size: 36px;
@@ -511,15 +537,30 @@ span {
 .demand {
   text-align: center;
   margin-bottom: 30px;
+  
+  @media @mobiles {
+    margin-bottom: 15px;
+  }
+
   &__image {
     width:  100px; 
     float: left;
     margin-right: 30px;
+
+    @media @mobiles {
+      margin-right: 0;
+      margin-bottom: 5px;
+      float: none;
+      display: inline-block;
+    }
   }
 
   &__desc {
     margin-left: 130px;
     max-width: 350px;
+    @media @mobiles {
+      margin: auto;
+    }
   }
 
   &__title {
@@ -527,12 +568,18 @@ span {
     margin-bottom: 5px;
     text-align: left;
     font-weight: bold;
+    @media @mobiles {
+      text-align: center;
+    }
   }
 
   &__text {
     font-size: @font-size;
     line-height: 1.5;
     text-align: left;
+    @media @mobiles {
+      text-align: center;
+    }
   }
 }
 
@@ -546,6 +593,10 @@ span {
     background-repeat: no-repeat;
     background-position: center;
     padding: 35px 75px;
+
+    @media @mobiles {
+      padding: 35px;
+    }
   }
   
   &__inner--bordered-2 {
@@ -564,6 +615,11 @@ span {
     text-transform: uppercase;
     text-align: center;
     white-space: nowrap;
+
+    @media @mobiles {
+      font-size: 18px;
+      margin-bottom: 0;
+    }
   }
 
   &__fields {
@@ -593,6 +649,12 @@ span {
     border: 2px solid #000000;
     font-size: 16px;
 
+    &.error {
+      border: 2px solid #EB3836;
+    }
+    @media @mobiles {
+      margin-bottom: 10px;
+    }
     &--flex {
       margin-bottom: 0;
       margin-right: 20px;
@@ -609,6 +671,10 @@ span {
     height: 40px;
     line-height: 40px;
     margin-bottom: 10px;
+
+    @media @mobiles {
+      font-size: 18px;
+    }
   }
 }
 
@@ -698,6 +764,12 @@ span {
     margin-left: 30px;
     padding: 0;  
     list-style: none;
+  
+
+    @media @mobiles {
+      margin-left: 0;
+    }
+
   }
 
   &__item {
@@ -768,6 +840,10 @@ span {
   background-size: contain; 
 
   margin-right: 20px;
+
+  @media @mobiles {
+    margin-right: 0;
+  }
   
   &:nth-child(1) {
     background-image: url('../img/plan-1.png');  
@@ -881,8 +957,12 @@ span {
     background-position: center;
     background-size: contain; 
 
-    margin-right: 20px;
     padding: 30px;
+  
+
+    @media @mobiles {
+      margin-right: 0;
+    }
 
     &:nth-child(1) {
       background-image: url('../img/add-bg-2.png');  
@@ -892,6 +972,9 @@ span {
     }
     &:first-child {
       margin-right: 30px;
+      @media @mobiles {
+        margin-right: 0;
+      }
     }
 
     @media @mobiles {
@@ -930,11 +1013,15 @@ span {
   &__inner {
     max-width: 700px;
     margin: auto;
-    padding: 70px !important;
+    padding: 70px;
     margin-bottom: 50px;
     position: relative;
 
     perspective:350px;
+
+    @media @mobiles {
+      padding: 35px 35px 70px 35px;
+    }
 
   }
   
@@ -949,6 +1036,10 @@ span {
     z-index: -1;
     border-radius: 15px;
     transform:rotateX(-10deg) translateZ(-35px) translateX(11px) translateY(25px) rotateY(3deg);
+
+    @media @mobiles {
+      transform:none;
+    }
   }
 
   &__text {
@@ -1078,6 +1169,18 @@ span {
   &__copyright {
     font-size: 14px;
     line-height: 55px;
+
+    span {
+      display: inline-block;
+      padding: 0 15px;
+      
+      @media @mobiles {
+        display: block;
+        margin-right: 0;
+        margin-bottom: 5px;
+        line-height: 31px;
+      }
+    }
   }
 
   @media @mobiles {
@@ -1282,6 +1385,11 @@ span {
   &.next {
     background-image: url('../img/next.png'); 
   }
+
+  @media @mobiles {
+    bottom: 0;
+    top: auto; 
+  }
 }
 
 
@@ -1305,6 +1413,9 @@ span {
   display: none;
 
   &--callback {
+    width: 400px;
+  }
+  &--plan {
     width: 400px;
   }
   &__bg {

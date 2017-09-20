@@ -9,19 +9,40 @@
 </head>
 <body>
   <div class="popup__bg"></div>
+  
   <div class="popup popup--callback">
     <a class="popup__close" href="#">x</a>
-    <p class="form__title">Принять участие</p>
-    <form id="callback__form" action="#">
+    <p class="form__title">Обратный звонок</p>
+    <form id="callback-form-popup" action="#">
       <div class="form__fields">
-        <input class="form__field" placeholder="Ваше имя" type="text">
-        <input class="form__field" placeholder="Ваш телефон" type="text">
+        <input type="hidden" name="method" value="callback">
+        <input class="form__field im--text" name="name" placeholder="Ваше имя" type="text" required>
+        <input class="form__field im--phone" name="phone" placeholder="Ваш телефон" type="text" required>
       </div>
       <div class="popup__buttons">
-        <a class="btn btn--red" href="#" value="">Перезвоните мне</a>
+        <a class="btn btn--red form__button" href="#" id="btn__callback" data-target="callback-form-popup">Перезвоните мне</a>
       </div>
     </form>
   </div>
+
+  <div class="popup popup--plan">
+    <a class="popup__close" href="#">x</a>
+    <p class="form__title">Принять участие</p>
+    <form id="enroll-form-popup" action="#">
+      <div class="form__fields">
+        <input type="hidden" name="plan" value="Не определился">
+        <input type="hidden" name="method" value="enroll">
+        <input class="form__field im--text" name="name" placeholder="Ваше имя" type="text" required>
+        <input class="form__field im--phone" name="phone" placeholder="Ваш телефон" type="text" required>
+        <input class="form__field im--email" name="email" placeholder="Ваш E-mail" type="text" required>
+      </div>
+      <div class="popup__buttons">
+        <a class="btn btn--red" href="#" value="">Записаться</a>
+      </div>
+    </form>
+  </div>
+
+
   <nav class="navbar navbar--top">
     <div class="contaner container--fluid">
       <a class="navbar__logo" href="/"></a>
@@ -69,16 +90,18 @@
           <p class="promo__title">Первая массовая онлайн-игра<br>по продажам</p>
           <p class="promo__subtitle">НАУЧИМ ПРОДАВАТЬ И ПОБЕЖДАТЬ <br>В ПЕРЕГОВОРАХ ИГРАЮЧИ!</p>
         </div>
-        <div class="header__form form col-md-4">
-          <div class="form__inner form__inner--bordered">
+        <div class="header__form col-md-4">
+          <form id="enroll-form" class="form__inner form__inner--bordered">
             <p class="form__title">Принять участие</p>
             <div class="form__fields">
-              <input class="form__field" type="text" placeholder="Ваше имя">
-              <input class="form__field" type="text" placeholder="Ваш телефон">
-              <input class="form__field" type="text" placeholder="Ваш e-mail">
+              <input type="hidden" name="method" value="enroll">
+              <input type="hidden" name="plan" value="Не определился">
+              <input class="form__field" type="text" placeholder="Ваше имя" required> 
+              <input class="form__field" type="text" placeholder="Ваш телефон" required>
+              <input class="form__field" type="text" placeholder="Ваш e-mail" required>
             </div>
-            <button class="btn btn--blue form__button">Записаться</button>
-          </div>
+            <button class="btn btn--blue form__button" data-target="enroll-form">Записаться</button>
+          </form>
         </div>
       </div>
     </div>
@@ -226,7 +249,7 @@
         <div class="form">
           <div class="form__inner">
             <div class="form__fields">
-              <a href="#" class="btn btn--red form__button" style="width: 300px;">Получить программу игры</a>
+              <a href="#" class="btn btn--red form__button" style="max-width: 300px;">Получить программу игры</a>
               <p class="form__text--small form__text--white">Для скачивания необходима авторизация в ВКонтакте</p>  
             </div>
           </div>
@@ -277,12 +300,11 @@
             <div class="plan__inner">
               <p class="plan__title">Тариф «Сам по себе»</p>
               <p class="plan__price">2900 руб.</p>
-
               <div class="plan_desc">
                 <p class="plan__text">Ты получишь доступ ко всем заданиям и вебинарам и будешь под постоянной поддержкой опытного куратора</p>
               </div>
               <p class="plan_adds">Без иммунитета</p>
-              <a href="#" class="btn btn--blue plan__button">Играть</a>
+              <a data-plan="Сам по себе" href="#" class="btn btn--blue plan__button">Играть</a>
             </div>
           </div>
           <div class="plans__item plan">
@@ -293,7 +315,7 @@
                 <p class="plan__text">Доступ ко всем заданиям и вебинарам, поддержка куратора + иммунитет на 1 вылет. Иммунитетом можно воспользоваться 1 раз на ЛЮБОЙ неделе игры.</p>
               </div>
               <p class="plan_adds">Иммунитет на 1 вылет</p>
-              <a href="#" class="btn btn--blue plan__button">Играть</a>
+              <a data-plan="Бессмертный" href="#" class="btn btn--blue plan__button">Играть</a>
             </div>
           </div>
           <div class="plans__item plan">
@@ -304,7 +326,7 @@
                 <p class="plan__text">Твоим куратором будет сам Евгений Орлан, а это значит, что ты получишь еще большую дозу навыков от лучшего бизнес-тренера. + иммунитет на 1 вылет</p>
               </div>
               <p class="plan_adds">Иммунитет на 1 вылет</p>
-              <a href="#" class="btn btn--blue plan__button">Играть</a>
+              <a data-plab="Орлан" href="#" class="btn btn--blue plan__button">Играть</a>
             </div>
           </div>
         </div>
@@ -351,7 +373,7 @@
         <h1 class="section__title section__title--white">СОМНЕВАЕШЬСЯ СТОИТ ЛИ УЧАСТВОВАТЬ В ИГРЕ?</h1>
         <p class="section__subtitle">Получи тестовое задание и проверь себя прямо сейчас!</p>
         <div class="form__fields">
-          <a href="#" class="btn btn--blue form__button" style="width: 300px;">Получить задание</a>
+          <a href="#" class="btn btn--blue form__button" style="max-width: 300px;">Получить задание</a>
           <p class="form__text--small form__text--white">Для скачивания необходима авторизация в ВКонтакте</p>  
         </div>
       </div>
@@ -527,33 +549,34 @@
   <footer class="footer">
     <div class="contaner container--fluid">
       <div class="pull--right">
-        <div class="footer__copyright">#ПродавецИдей  |   © 2017 ИП "…."    |   <a class="link link--white"href="#">Политика конфиденциальности персональных данных</a>   |   Тел: 8 (812)- 408-38-2424</div> 
+        <div class="footer__copyright"><span>#ПродавецИдей</span><span>© 2017 ИП "…."</span><span><a class="link link--white"href="#">Политика конфиденциальности персональных данных</a></span><span>Тел: 8 (812)- 408-38-2424</span></div> 
       </div>
     </div>
   </footer>
   <script type="text/javascript" src="https://yastatic.net/jquery/3.1.1/jquery.min.js"></script>
   <script type="text/javascript" src="./js/libs.min.js"></script>
   <script type="text/javascript" src="./js/bundle.js"></script>
-  <!-- VK Pixel Code -->
-  <script type=“text/javascript”>(window.Image ? (new Image()) : document.createElement(‘img’)).src = ‘https://vk.com/rtrg?p=VK-RTRG-162280-2ZNtu';</script>
-  <!-- -->
   
-  <!-- Facebook Pixel Code -->
+  <!-- VK Pixel Code 
+  <script type=“text/javascript”>(window.Image ? (new Image()) : document.createElement(‘img’)).src = ‘https://vk.com/rtrg?p=VK-RTRG-162280-2ZNtu';</script>
+  -->
+  
+  <!-- Facebook Pixel Code 
   <script>
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
     n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version=‘2.0’;
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
     n.queue=[];t=b.createElement(e);t.async=!0;
     t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window,document,‘script’,
-    ‘https://connect.facebook.net/en_US/fbevents.js');
-     fbq(‘init’, ‘1825027427771441’); 
-    fbq(‘track’, ‘PageView’);
+    s.parentNode.insertBefore(t,s)}(window,document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+     fbq('init', '1825027427771441'); 
+    fbq('track', 'PageView');
   </script>
   <noscript>
   <img height="1" width="1" src="https://www.facebook.com/tr?id=1825027427771441&ev=PageView&noscript=1"/>
   </noscript>
-  <!-- -->
+  -->
 </body>
 </html>
