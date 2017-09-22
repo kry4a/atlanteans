@@ -80,31 +80,29 @@ $(function(){
       var form = $('#'+target);
       var method = form.find('input[name="method"]').val();  
 
-      form.find('input[required]').each(function(){
+      form.find('input.required').each(function(){
         var val=$(this).val();
         if (val=='') {
           $(this).addClass('error');  
         }
       });
-
       if (form.find('input.error').length) return false;
-      
-      console.log('before submit');
       e.preventDefault();
       
-      console.log('validated');
       $.ajax({
         method: 'POST',
         url: '/mailer.php',
-        data: $('#order').serialize(),
+        data: form.serialize(),
         dataType: 'json',
         success: function (json) {
             console.log(json);
             if (json['status']) {
-                console.log('success');
-               
-            } else {
-                console.log('error');
+              form.find('input.required').each(function(){
+                $(this).val('');
+              });
+              form.append('<p class="popup__title">Спасибо за обращение!</p>');
+              
+              $('.popup__title').fadeOut(1500, function(){ $(this).remove();});
             }
         },
         error: function(xhr, ajaxOptions, thrownError) {

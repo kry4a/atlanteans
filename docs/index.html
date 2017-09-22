@@ -16,8 +16,9 @@
     <form id="callback-form-popup" action="#">
       <div class="form__fields">
         <input type="hidden" name="method" value="callback">
-        <input class="form__field im--text" name="name" placeholder="Ваше имя" type="text" required>
-        <input class="form__field im--phone" name="phone" placeholder="Ваш телефон" type="text" required>
+        <input type="hidden" name="e-mail" value="">
+        <input class="form__field im--text required" name="name" placeholder="Ваше имя" type="text" >
+        <input class="form__field im--phone required" name="phone" placeholder="Ваш телефон" type="text">
       </div>
       <div class="popup__buttons">
         <a class="btn btn--red form__button" href="#" id="btn__callback" data-target="callback-form-popup">Перезвоните мне</a>
@@ -78,9 +79,10 @@
             <div class="form__fields">
               <input type="hidden" name="method" value="enroll">
               <input type="hidden" name="plan" value="Не определился">
-              <input class="form__field" type="text" placeholder="Ваше имя" required> 
-              <input class="form__field" type="text" placeholder="Ваш телефон" required>
-              <input class="form__field" type="text" placeholder="Ваш e-mail" required>
+              <input type="hidden" name="e-mail" value="">
+              <input class="form__field required" name="name" type="text" placeholder="Ваше имя"> 
+              <input class="form__field required" name="phone" type="text" placeholder="Ваш телефон">
+              <input class="form__field required" name="email" type="text" placeholder="Ваш e-mail">
             </div>
             <button class="btn btn--blue form__button" data-target="enroll-form">Записаться</button>
           </form>
@@ -550,7 +552,15 @@
               <li class="faq__item">
                 <p class="faq__question">Есть сертификаты, подтверждающие компетентность Евгения Орлана?</p>
                 <div class="faq__answer">
-                  <p>По <a href="#">этой ссылке</a> ты найдешь все интересующие тебя документы и даже больше.</p>
+                  <p>Да, вот они.</p>
+                  <div class="faq__images">
+                    <a class="faq__image" href="./img/sertificate_1.jpg" data-featherlight="image">
+                      <img class="img--responsive" src="./img/sertificate_1_thumb.jpg" alt="Сертификат Erickson">
+                    </a>
+                    <a class="faq__image" href="./img/sertificate_2.jpg" data-featherlight="image">
+                      <img class="img--responsive" src="./img/sertificate_2_thumb.jpg" alt="Сертификат META">
+                    </a>
+                  </div>
                 </div>
               </li>
             </ul>

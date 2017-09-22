@@ -1,3 +1,6 @@
 public/bootstrap-3.3.7
+docs/libs
+docs/.htaccess
+docs/mailer.php
 node_modules
 gulpfile\.js
